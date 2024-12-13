@@ -44,6 +44,10 @@ public class Kategori {
         this.keterangan = keterangan;
     }
     
+    public String toString() {
+        return nama;
+    }
+    
     public Kategori getById(int id) {
         Kategori kat = new Kategori();
         ResultSet rs = DBHelper.selectQuery("SELECT * FROM kategori " + " WHERE idkategori = '" + id + "'");
@@ -117,5 +121,7 @@ public class Kategori {
         String SQL = "DELETE FROM kategori WHERE idkategori = '" + this.idkategori + "'";
         DBHelper.executeQuery(SQL);
     }
+    
+    
  
 }
